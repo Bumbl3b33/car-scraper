@@ -1,0 +1,4 @@
+'Toyota AXIO 2016 Car', 'Puttalam', 'Rs. 8,350,000', '112000 (km)', '2022-10-02',
+'Toyota Axio 2015 Car', 'Colombo', 'Rs. 9,500,000', '63000 (km)', '2022-10-02',
+'Toyota Axio 141 2012 Car', 'Colombo', 'Rs. 6,570,000', '151000 (km)', '2022-10-02',
+'Toyota Axio WXB 2017 Car', 'Dehiwala-Mount-Lavinia', 'Rs. 11,300,000', '85000 (km)', '2022-10-02',

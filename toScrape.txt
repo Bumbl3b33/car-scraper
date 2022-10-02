@@ -1,0 +1,6 @@
+axio,
+celerio,
+vitz,
+alto,
+bezza,
+panda,
