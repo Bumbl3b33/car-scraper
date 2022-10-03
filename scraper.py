@@ -1,9 +1,15 @@
+from datetime import date
+from logging import exception
 from selenium.webdriver.common.by import By
 
-def saveCars(output_file, cars):
+def saveCars(cars):
     try:
-        f = open(output_file, mode='a', encoding='utf-8')
+        file_name = str(date.today())
+        file = "./logs/" + file_name + ".txt"
+        f = open(file, mode='a', encoding='utf-8')
         f.write(cars)
+    except:
+        raise
     finally:
         f.close()
 
@@ -18,3 +24,23 @@ def scrapeCar(driver, id, detail_count):
 
 def formatCar(car):
     return repr(car).removeprefix("[").removesuffix("]") + "," + "\n"
+
+def scrape(driver,vars):
+    try:
+        driver.get(vars['LINK_TO_SCRAPE'] + '/axio')
+        cars = ""
+        for i in range(1,vars['MAX_TO_SCRAPE']):
+                try:
+                    if (i % vars['MAX_BEFORE_SAVE'] == 0):
+                        saveCars(cars)
+                        cars = ""
+                    
+                    car = scrapeCar(driver, i, vars['CAR_DETAIL_COUNT'])
+                    cars = cars + formatCar(car)
+                except:
+                    raise
+                finally:
+                    saveCars(cars)  
+                    cars = ""
+    except:
+        raise  
