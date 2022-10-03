@@ -2,3 +2,4 @@
 *.env
 /scraper-env
 /logs
+/__pycache__
